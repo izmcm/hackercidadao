@@ -34,6 +34,7 @@ class ChatViewController: UIViewController {
                 print("bairro:",mark?.subLocality)
                 print("rua:",mark?.thoroughfare)
                 print("número:",mark?.subThoroughfare)
+                
             }
         }
     }
