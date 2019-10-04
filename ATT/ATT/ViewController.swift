@@ -8,20 +8,47 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
 
 class ViewController: UIViewController {
     
     let vcCamera = UIImagePickerController()
+    var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.vcCamera.delegate = self
         self.vcCamera.allowsEditing = true
         self.vcCamera.sourceType = .camera
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.getLocation()
     }
 
     @IBAction func btnTakePictureTapped(_ sender: Any) {
         self.opeCamera()
+    }
+    
+    func getLocation(){
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                
+            case .authorizedWhenInUse, .authorizedAlways:
+                locationManager.startUpdatingLocation()
+            case .notDetermined:
+                locationManager.requestAlwaysAuthorization()
+                locationManager.startUpdatingLocation()
+            default:
+                break
+            }
+        } else {
+            print("Location services are not enabled")
+        }
     }
     
     func opeCamera(){
@@ -46,7 +73,9 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate{
+    
+    // MARK: - camera
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         self.vcCamera.dismiss(animated: true, completion: nil)
         
@@ -57,4 +86,10 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
         
         print(image.size)
     }
+    
+    // MARK: - location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations.last)
+    }
+    
 }
