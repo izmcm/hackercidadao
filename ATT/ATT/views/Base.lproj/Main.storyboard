@@ -20,13 +20,25 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RKh-yg-kNN"/>
                                 </constraints>
-                                <state key="normal" title="Relatar acidente"/>
+                                <state key="normal" title="Sim"/>
                                 <connections>
                                     <action selector="btnTakePictureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jXF-wT-SxH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Você pode enviar uma foto do acidente?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0e-TB-fl0">
+                                <rect key="frame" x="68" y="248" width="278" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unc-g3-nAO">
+                                <rect key="frame" x="192" y="467" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Não"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1843137255" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="NuU-Gh-f3c" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L1s-Yf-Omb"/>
                             <constraint firstItem="NuU-Gh-f3c" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" constant="-40" id="PTC-05-Ivz"/>
@@ -36,6 +48,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="pIV-3R-Cv3"/>
                     <connections>
+                        <outlet property="noButton" destination="unc-g3-nAO" id="vlW-4X-N8k"/>
+                        <outlet property="yesButton" destination="NuU-Gh-f3c" id="f6U-Pe-Z9o"/>
                         <segue destination="9AQ-zr-92K" kind="show" identifier="toChatSegue" id="F8g-q5-5Hh"/>
                     </connections>
                 </viewController>
@@ -196,21 +210,25 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SliderCell" rowHeight="80" id="E1Y-sN-vUJ">
-                                        <rect key="frame" x="0.0" y="348" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SliderCell" rowHeight="170" id="E1Y-sN-vUJ">
+                                        <rect key="frame" x="0.0" y="348" width="414" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E1Y-sN-vUJ" id="KMq-kg-5b9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="ET0-c4-3rv">
-                                                    <rect key="frame" x="28" y="25" width="358" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="ET0-c4-3rv">
+                                                    <rect key="frame" x="28" y="35" width="358" height="31"/>
                                                 </slider>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKp-n9-I7H">
+                                                    <rect key="frame" x="186" y="96" width="42" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Enviar"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ET0-c4-3rv" secondAttribute="trailing" constant="10" id="2ZG-D3-uU0"/>
                                                 <constraint firstItem="ET0-c4-3rv" firstAttribute="centerX" secondItem="KMq-kg-5b9" secondAttribute="centerX" id="4y1-tx-Gsz"/>
-                                                <constraint firstItem="ET0-c4-3rv" firstAttribute="centerY" secondItem="KMq-kg-5b9" secondAttribute="centerY" id="Mm7-OH-VlI"/>
                                                 <constraint firstItem="ET0-c4-3rv" firstAttribute="leading" secondItem="KMq-kg-5b9" secondAttribute="leadingMargin" constant="10" id="T9s-ag-y6a"/>
                                             </constraints>
                                         </tableViewCellContentView>

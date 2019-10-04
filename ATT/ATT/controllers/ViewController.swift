@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         self.openCamera()
     }
     
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+    
+    
     func getLocation(){
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
