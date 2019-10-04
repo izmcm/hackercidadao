@@ -20,6 +20,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setButtonsView()
+        
         self.vcCamera.delegate = self
         self.vcCamera.allowsEditing = true
         self.vcCamera.sourceType = .camera
@@ -35,6 +38,31 @@ class ViewController: UIViewController {
 
     @IBAction func btnTakePictureTapped(_ sender: Any) {
         self.openCamera()
+    }
+    
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    
+    func setButtonsView() {
+        self.yesButton.layer.cornerRadius = 25
+        self.noButton.layer.cornerRadius = 25
+        self.cancelButton.layer.cornerRadius = 25
+        
+        self.yesButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.yesButton.tintColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+
+        self.noButton.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)        
+        self.noButton.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+        self.noButton.layer.borderWidth = 1
+        self.noButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        self.cancelButton.tintColor = #colorLiteral(red: 0.9921568627, green: 0.4862745098, blue: 0.4862745098, alpha: 1)
+        self.cancelButton.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+        self.cancelButton.layer.borderWidth = 1
+        self.cancelButton.layer.borderColor = #colorLiteral(red: 0.9921568627, green: 0.4862745098, blue: 0.4862745098, alpha: 1)
+
     }
     
     func getLocation(){
