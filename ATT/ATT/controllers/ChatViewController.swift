@@ -35,6 +35,8 @@ class ChatViewController: UIViewController {
                 print("rua:",mark?.thoroughfare)
                 print("número:",mark?.subThoroughfare)
                 
+                FirebaseHelper.share.sendAdress(cidade: mark?.locality ?? "", bairro: mark?.subLocality ?? "", rua: mark?.thoroughfare ?? "", numero: mark?.subThoroughfare ?? "")
+                
             }
         }
     }
