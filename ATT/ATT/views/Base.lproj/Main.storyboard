@@ -83,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SistemCell" rowHeight="80" id="hb2-Ep-eus">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SistemCell" rowHeight="80" id="hb2-Ep-eus" customClass="TextMessageTableViewCell" customModule="ATT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hb2-Ep-eus" id="9OI-pE-BCY">
@@ -120,8 +120,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="L0E-e9-AiU" secondAttribute="bottom" constant="12" id="ra8-bl-pg9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblMessage" destination="L0E-e9-AiU" id="mcN-ju-ME7"/>
+                                            <outlet property="vwUser" destination="mga-Vd-PAT" id="PYi-nV-Ygs"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="80" id="wSC-Jl-dYl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="80" id="wSC-Jl-dYl" customClass="TextMessageTableViewCell" customModule="ATT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wSC-Jl-dYl" id="XP4-e3-37D">
@@ -158,8 +162,12 @@
                                                 <constraint firstItem="EQ0-k9-iV9" firstAttribute="leading" secondItem="XP4-e3-37D" secondAttribute="leading" constant="10" id="vnX-4C-pjB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblMessage" destination="EQ0-k9-iV9" id="eG1-kG-Us1"/>
+                                            <outlet property="vwUser" destination="OZh-82-ztZ" id="XDL-uy-Iuu"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="segmentCell" rowHeight="80" id="Scw-1o-5EE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="segmentCell" rowHeight="80" id="Scw-1o-5EE" customClass="SelectionTableViewCell" customModule="ATT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="188" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Scw-1o-5EE" id="CTW-wR-Ea6">
@@ -188,8 +196,11 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="R1I-aI-UzU" secondAttribute="trailing" id="gzk-x2-pfX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="selectionSegment" destination="R1I-aI-UzU" id="IZR-rl-PCf"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonsCell" rowHeight="80" id="uQT-Pm-Zkh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonsCell" rowHeight="80" id="uQT-Pm-Zkh" customClass="BooleanTableViewCell" customModule="ATT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="268" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQT-Pm-Zkh" id="wdM-Xx-JYY">
@@ -205,6 +216,9 @@
                                                                 <constraint firstAttribute="height" constant="60" id="HO8-VS-Pf8"/>
                                                             </constraints>
                                                             <state key="normal" title="SIM"/>
+                                                            <connections>
+                                                                <action selector="btnYesTapped:" destination="uQT-Pm-Zkh" eventType="touchUpInside" id="qsJ-ZF-mN9"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQH-SQ-Jxc">
                                                             <rect key="frame" x="217" y="0.0" width="197" height="60"/>
@@ -212,6 +226,9 @@
                                                                 <constraint firstAttribute="height" constant="60" id="gev-sc-xwQ"/>
                                                             </constraints>
                                                             <state key="normal" title="NÃO"/>
+                                                            <connections>
+                                                                <action selector="btnNoTapped:" destination="uQT-Pm-Zkh" eventType="touchUpInside" id="6MO-bE-Jf8"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -223,8 +240,12 @@
                                                 <constraint firstItem="MQd-j7-7dp" firstAttribute="top" secondItem="wdM-Xx-JYY" secondAttribute="top" constant="10" id="y6k-oU-D8V"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnNo" destination="bQH-SQ-Jxc" id="59y-Ok-vbM"/>
+                                            <outlet property="btnYes" destination="o3W-Xm-b1i" id="2N1-pj-Yus"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SliderCell" rowHeight="170" id="E1Y-sN-vUJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SliderCell" rowHeight="170" id="E1Y-sN-vUJ" customClass="SliderTableViewCell" customModule="ATT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="348" width="414" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E1Y-sN-vUJ" id="KMq-kg-5b9">
@@ -243,6 +264,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="qtV-8E-w2v"/>
                                                     </constraints>
                                                     <state key="normal" title="Enviar"/>
+                                                    <connections>
+                                                        <action selector="btnSendTapped:" destination="E1Y-sN-vUJ" eventType="touchUpInside" id="OTO-b2-DMz"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -255,8 +279,16 @@
                                                 <constraint firstItem="ET0-c4-3rv" firstAttribute="top" secondItem="KMq-kg-5b9" secondAttribute="top" constant="35" id="qYW-q2-hxB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnSend" destination="GKp-n9-I7H" id="Ryq-2m-GMW"/>
+                                            <outlet property="slider" destination="ET0-c4-3rv" id="qGZ-tU-Spd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9AQ-zr-92K" id="ovQ-vx-f5g"/>
+                                    <outlet property="delegate" destination="9AQ-zr-92K" id="ai3-jh-vkE"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -38,5 +38,38 @@ class ChatViewController: UIViewController {
             }
         }
     }
+}
 
+extension ChatViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0{
+            return ChatHelper.shared.chat.count
+        }else{
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0{
+            if ChatHelper.shared.chat[indexPath.row].type == .Server{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SistemCell") as! TextMessageTableViewCell
+                
+                return cell
+            }else if ChatHelper.shared.chat[indexPath.row].type == .User{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as! TextMessageTableViewCell
+                
+                return cell
+            }
+        }else{
+            let cell = UITableViewCell()
+            cell.backgroundColor = .red
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
 }

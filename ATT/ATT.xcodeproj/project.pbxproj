@@ -11,6 +11,11 @@
 		15A499EA2347E73500DBBE0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499E92347E73500DBBE0A /* Extensions.swift */; };
 		15A499EC2347F3B400DBBE0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15A499EB2347F3B400DBBE0A /* GoogleService-Info.plist */; };
 		15A499EF2347F8E900DBBE0A /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499EE2347F8E900DBBE0A /* FirebaseHelper.swift */; };
+		15A499F12348068000DBBE0A /* ChatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499F02348068000DBBE0A /* ChatHelper.swift */; };
+		15A499F42348081D00DBBE0A /* TextMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499F32348081D00DBBE0A /* TextMessageTableViewCell.swift */; };
+		15A499F62348084C00DBBE0A /* SelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499F52348084C00DBBE0A /* SelectionTableViewCell.swift */; };
+		15A499F82348086600DBBE0A /* BooleanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499F72348086600DBBE0A /* BooleanTableViewCell.swift */; };
+		15A499FA2348088B00DBBE0A /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499F92348088B00DBBE0A /* SliderTableViewCell.swift */; };
 		511D71B288384600EDDEA04F /* Pods_ATT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201DB110641353AFF31D517A /* Pods_ATT.framework */; };
 		9851C5A12347BF2700468986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851C5A02347BF2700468986 /* AppDelegate.swift */; };
 		9851C5A32347BF2700468986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851C5A22347BF2700468986 /* SceneDelegate.swift */; };
@@ -25,6 +30,11 @@
 		15A499E92347E73500DBBE0A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		15A499EB2347F3B400DBBE0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15A499EE2347F8E900DBBE0A /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		15A499F02348068000DBBE0A /* ChatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHelper.swift; sourceTree = "<group>"; };
+		15A499F32348081D00DBBE0A /* TextMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageTableViewCell.swift; sourceTree = "<group>"; };
+		15A499F52348084C00DBBE0A /* SelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTableViewCell.swift; sourceTree = "<group>"; };
+		15A499F72348086600DBBE0A /* BooleanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanTableViewCell.swift; sourceTree = "<group>"; };
+		15A499F92348088B00DBBE0A /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		15D3791EA5B60B59C91ABF45 /* Pods-ATT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATT.debug.xcconfig"; path = "Target Support Files/Pods-ATT/Pods-ATT.debug.xcconfig"; sourceTree = "<group>"; };
 		201DB110641353AFF31D517A /* Pods_ATT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9851C59D2347BF2700468986 /* ATT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +63,7 @@
 		15A499E62347E6B900DBBE0A /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				15A499F2234807FC00DBBE0A /* Cells */,
 				9851C5A42347BF2700468986 /* ViewController.swift */,
 				15A499E42347E20E00DBBE0A /* ChatViewController.swift */,
 			);
@@ -80,8 +91,20 @@
 			isa = PBXGroup;
 			children = (
 				15A499EE2347F8E900DBBE0A /* FirebaseHelper.swift */,
+				15A499F02348068000DBBE0A /* ChatHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		15A499F2234807FC00DBBE0A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				15A499F32348081D00DBBE0A /* TextMessageTableViewCell.swift */,
+				15A499F52348084C00DBBE0A /* SelectionTableViewCell.swift */,
+				15A499F72348086600DBBE0A /* BooleanTableViewCell.swift */,
+				15A499F92348088B00DBBE0A /* SliderTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		78247D1ED74ABBA9A4174B63 /* Frameworks */ = {
@@ -255,7 +278,12 @@
 				9851C5A52347BF2700468986 /* ViewController.swift in Sources */,
 				9851C5A12347BF2700468986 /* AppDelegate.swift in Sources */,
 				15A499E52347E20E00DBBE0A /* ChatViewController.swift in Sources */,
+				15A499F82348086600DBBE0A /* BooleanTableViewCell.swift in Sources */,
+				15A499F12348068000DBBE0A /* ChatHelper.swift in Sources */,
 				15A499EF2347F8E900DBBE0A /* FirebaseHelper.swift in Sources */,
+				15A499F62348084C00DBBE0A /* SelectionTableViewCell.swift in Sources */,
+				15A499F42348081D00DBBE0A /* TextMessageTableViewCell.swift in Sources */,
+				15A499FA2348088B00DBBE0A /* SliderTableViewCell.swift in Sources */,
 				9851C5A32347BF2700468986 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
