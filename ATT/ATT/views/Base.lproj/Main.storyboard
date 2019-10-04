@@ -131,6 +131,71 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="segmentCell" rowHeight="80" id="Scw-1o-5EE">
+                                        <rect key="frame" x="0.0" y="188" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Scw-1o-5EE" id="CTW-wR-Ea6">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R1I-aI-UzU">
+                                                    <rect key="frame" x="20" y="21" width="374" height="39"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="JOA-ld-lqW"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="1"/>
+                                                        <segment title="2"/>
+                                                        <segment title="3"/>
+                                                        <segment title="4-6"/>
+                                                        <segment title="6-8"/>
+                                                        <segment title="9-10+"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="R1I-aI-UzU" secondAttribute="bottom" constant="10" id="APc-Ks-NOi"/>
+                                                <constraint firstItem="R1I-aI-UzU" firstAttribute="top" secondItem="CTW-wR-Ea6" secondAttribute="topMargin" constant="10" id="ROn-mc-KNL"/>
+                                                <constraint firstItem="R1I-aI-UzU" firstAttribute="leading" secondItem="CTW-wR-Ea6" secondAttribute="leadingMargin" id="TUW-rw-IEG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R1I-aI-UzU" secondAttribute="trailing" id="gzk-x2-pfX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonsCell" rowHeight="80" id="uQT-Pm-Zkh">
+                                        <rect key="frame" x="0.0" y="268" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQT-Pm-Zkh" id="wdM-Xx-JYY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MQd-j7-7dp">
+                                                    <rect key="frame" x="0.0" y="10" width="414" height="60"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3W-Xm-b1i">
+                                                            <rect key="frame" x="0.0" y="0.0" width="197" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="HO8-VS-Pf8"/>
+                                                            </constraints>
+                                                            <state key="normal" title="SIM"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQH-SQ-Jxc">
+                                                            <rect key="frame" x="217" y="0.0" width="197" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="gev-sc-xwQ"/>
+                                                            </constraints>
+                                                            <state key="normal" title="NÃO"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MQd-j7-7dp" firstAttribute="leading" secondItem="wdM-Xx-JYY" secondAttribute="leading" id="1uz-sC-fK5"/>
+                                                <constraint firstAttribute="trailing" secondItem="MQd-j7-7dp" secondAttribute="trailing" id="MZq-JX-Kj1"/>
+                                                <constraint firstAttribute="bottom" secondItem="MQd-j7-7dp" secondAttribute="bottom" constant="10" id="QYq-MB-2wK"/>
+                                                <constraint firstItem="MQd-j7-7dp" firstAttribute="top" secondItem="wdM-Xx-JYY" secondAttribute="top" constant="10" id="y6k-oU-D8V"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
