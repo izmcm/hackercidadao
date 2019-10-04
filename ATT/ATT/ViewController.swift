@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnTakePictureTapped(_ sender: Any) {
-        self.opeCamera()
+        self.openCamera()
     }
     
     func getLocation(){
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func opeCamera(){
+    func openCamera(){
         let status = AVCaptureDevice.authorizationStatus(for: .video)
         
         switch status {
