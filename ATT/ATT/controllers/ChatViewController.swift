@@ -60,16 +60,28 @@ extension ChatViewController: UITableViewDataSource{
             if ChatHelper.shared.chat[indexPath.row].type == .Server{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SistemCell") as! TextMessageTableViewCell
                 
+                cell.lblMessage.text = ChatHelper.shared.chat[indexPath.row].text
+                
                 return cell
             }else if ChatHelper.shared.chat[indexPath.row].type == .User{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as! TextMessageTableViewCell
                 
+                cell.lblMessage.text = ChatHelper.shared.chat[indexPath.row].text
+                
                 return cell
             }
         }else{
-            let cell = UITableViewCell()
-            cell.backgroundColor = .red
-            return cell
+            switch ChatHelper.shared.curentImputType {
+            case .Boolean:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "buttonsCell") as! BooleanTableViewCell
+                return cell
+                case .Selection:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "segmentCell") as! SelectionTableViewCell
+                return cell
+                case .Slider:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell") as! SliderTableViewCell
+                return cell
+            }
         }
         
         return UITableViewCell()

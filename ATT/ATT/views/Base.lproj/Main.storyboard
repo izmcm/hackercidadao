@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dwt-CN-zlQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dwt-CN-zlQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -92,7 +92,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mga-Vd-PAT">
                                                     <rect key="frame" x="10" y="20" width="40" height="40"/>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="XqC-vy-WiB"/>
                                                         <constraint firstAttribute="height" constant="40" id="m4U-xX-Kv8"/>
@@ -112,6 +112,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="L0E-e9-AiU" firstAttribute="top" secondItem="9OI-pE-BCY" secondAttribute="top" constant="12" id="4Sj-HY-smL"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mga-Vd-PAT" secondAttribute="bottom" constant="20" id="9BY-yU-Dgb"/>
                                                 <constraint firstItem="mga-Vd-PAT" firstAttribute="top" secondItem="9OI-pE-BCY" secondAttribute="top" constant="20" id="K0N-d4-m2T"/>
                                                 <constraint firstItem="L0E-e9-AiU" firstAttribute="leading" secondItem="mga-Vd-PAT" secondAttribute="trailing" constant="8" id="K0P-rx-3dw"/>
                                                 <constraint firstItem="mga-Vd-PAT" firstAttribute="leading" secondItem="9OI-pE-BCY" secondAttribute="leading" constant="10" id="VTg-cG-4To"/>
@@ -140,7 +141,7 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZh-82-ztZ">
                                                     <rect key="frame" x="364" y="20" width="40" height="40"/>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="b8K-mQ-1gt"/>
                                                         <constraint firstAttribute="height" constant="40" id="tAW-q1-kbQ"/>
@@ -157,6 +158,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="OZh-82-ztZ" secondAttribute="trailing" constant="10" id="Pi7-dS-Qax"/>
                                                 <constraint firstItem="EQ0-k9-iV9" firstAttribute="top" secondItem="XP4-e3-37D" secondAttribute="top" constant="12" id="SOH-8p-oU5"/>
                                                 <constraint firstAttribute="bottom" secondItem="EQ0-k9-iV9" secondAttribute="bottom" constant="12" id="VMi-Zz-MSG"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OZh-82-ztZ" secondAttribute="bottom" constant="20" id="c73-IX-UAq"/>
                                                 <constraint firstItem="OZh-82-ztZ" firstAttribute="leading" secondItem="EQ0-k9-iV9" secondAttribute="trailing" constant="8" id="mZa-QI-56K"/>
                                                 <constraint firstItem="EQ0-k9-iV9" firstAttribute="centerY" secondItem="XP4-e3-37D" secondAttribute="centerY" id="qVt-pD-Xlz"/>
                                                 <constraint firstItem="EQ0-k9-iV9" firstAttribute="leading" secondItem="XP4-e3-37D" secondAttribute="leading" constant="10" id="vnX-4C-pjB"/>
@@ -200,7 +202,7 @@
                                             <outlet property="selectionSegment" destination="R1I-aI-UzU" id="IZR-rl-PCf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonsCell" rowHeight="80" id="uQT-Pm-Zkh" customClass="BooleanTableViewCell" customModule="ATT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="buttonsCell" rowHeight="80" id="uQT-Pm-Zkh" customClass="BooleanTableViewCell" customModule="ATT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="268" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQT-Pm-Zkh" id="wdM-Xx-JYY">
@@ -245,7 +247,7 @@
                                             <outlet property="btnYes" destination="o3W-Xm-b1i" id="2N1-pj-Yus"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SliderCell" rowHeight="170" id="E1Y-sN-vUJ" customClass="SliderTableViewCell" customModule="ATT" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sliderCell" rowHeight="170" id="E1Y-sN-vUJ" customClass="SliderTableViewCell" customModule="ATT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="348" width="414" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E1Y-sN-vUJ" id="KMq-kg-5b9">

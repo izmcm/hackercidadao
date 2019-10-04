@@ -33,7 +33,7 @@ class ChatHelper {
     
     static let shared = ChatHelper()
     
-    var chat: [Message] = [Message(type: .Server, text: "Pronto recebi a sua foto!\nvocê pode compartilhar a sau localização para que possamos antender as vitimas?")]
+    var chat: [Message] = [Message(type: .Server, text: "Pronto, recebi a sua foto!\n Você pode compartilhar a sua localização para que possamos atender as vítimas?")]
     var curentImputType: ImputType = .Boolean
     
 }
