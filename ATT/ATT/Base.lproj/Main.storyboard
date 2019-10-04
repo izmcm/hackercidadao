@@ -35,10 +35,29 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="pIV-3R-Cv3"/>
+                    <connections>
+                        <segue destination="9AQ-zr-92K" kind="show" identifier="toChatSegue" id="F8g-q5-5Hh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="O4E-nC-wWA">
+            <objects>
+                <viewController id="9AQ-zr-92K" customClass="ChatViewController" customModule="ATT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DXn-CZ-eZW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7MQ-Yg-wOQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="et4-Rs-9Nq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DuL-T6-s0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vfs-Ge-9Qz">

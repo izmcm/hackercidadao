@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     
     let vcCamera = UIImagePickerController()
     var locationManager = CLLocationManager()
+    
+    var img: UIImage?
+    var location: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +74,14 @@ class ViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toChatSegue"{
+            let vc = segue.destination as! ChatViewController
+            vc.img = self.img
+            vc.location = self.location
+        }
+    }
+    
 }
 
 extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate{
@@ -84,12 +95,14 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
             return
         }
         
-        print(image.size)
+        self.img = image
+        
+        self.performSegue(withIdentifier: "toChatSegue", sender: nil)
     }
     
     // MARK: - location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations.last)
+        self.location = locations.last
     }
     
 }
