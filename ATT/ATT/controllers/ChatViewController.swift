@@ -200,11 +200,13 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
     }
     
     func sendComment(comment: String) {
-        
+        self.performSegue(withIdentifier: "daleSegue", sender: nil)
     }
     
     func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
-        print(scoreText.text)
+        FirebaseHelper.share.sendComment(comment: scoreText.text ?? "") {
+            self.performSegue(withIdentifier: "daleSegue", sender: nil)
+        }
         self.view.endEditing(true)
         return true
     }
