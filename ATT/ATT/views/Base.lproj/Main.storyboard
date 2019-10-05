@@ -327,17 +327,10 @@
                                                     <rect key="frame" x="20" y="150" width="374" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-rR-99y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                                             <state key="normal" title="Não"/>
                                                             <connections>
                                                                 <action selector="notSendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="d9g-Ye-rEs"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkh-VX-kwB">
-                                                            <rect key="frame" x="187" y="0.0" width="187" height="44"/>
-                                                            <state key="normal" title="Sim"/>
-                                                            <connections>
-                                                                <action selector="sendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="j1I-nK-FPC"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

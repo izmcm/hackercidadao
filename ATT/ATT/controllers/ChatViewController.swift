@@ -102,6 +102,7 @@ extension ChatViewController: UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell") as! CommentTableViewCell
                 cell.delegate = self
                 cell.txtComment.resignFirstResponder()
+                cell.txtComment.delegate = self
                 return cell
             }
         }
@@ -137,7 +138,7 @@ extension ChatViewController: UITableViewDataSource{
             let keyboardFrame:NSValue = (notification.userInfo! as NSDictionary).value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
             let keyboardHeight = keyboardFrame.cgRectValue.height
             
-            self.tableViewBottomConstrant.constant = keyboardHeight + 20
+            self.tableViewBottomConstrant.constant = keyboardHeight
             self.view.layoutIfNeeded()
         }
     
@@ -150,7 +151,7 @@ extension ChatViewController: UITableViewDataSource{
         }
 }
 
-extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, SliderCellDelegate, CommentTableViewCellDelegate {
+extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, SliderCellDelegate, CommentTableViewCellDelegate, UITextFieldDelegate {
     
     func tappedNumber(input: String) {
         let newMessage = Message(type: .User, text: input)
@@ -199,6 +200,12 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
     }
     
     func sendComment(comment: String) {
-        print(comment)
+        
+    }
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        print(scoreText.text)
+        self.view.endEditing(true)
+        return true
     }
 }
