@@ -17,6 +17,7 @@ enum ImputType{
     case Boolean
     case Selection
     case Slider
+    case Comment
 }
 
 class Message{

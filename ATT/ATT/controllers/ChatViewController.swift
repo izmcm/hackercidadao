@@ -103,6 +103,10 @@ extension ChatViewController: UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell") as! SliderTableViewCell
                 cell.delegate = self
                 return cell
+            case .Comment:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell") as! CommentTableViewCell
+                cell.delegate = self
+                return cell
             }
         }
         
@@ -110,7 +114,7 @@ extension ChatViewController: UITableViewDataSource{
     }
 }
 
-extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, SliderCellDelegate {
+extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, SliderCellDelegate, CommentTableViewCellDelegate {
     
     func tappedNumber(input: String) {
         let newMessage = Message(type: .User, text: input)
@@ -151,7 +155,14 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
     
     func sendSlideData(value: Int) {
         FirebaseHelper.share.sendGravidade(value: value) {
-            self.performSegue(withIdentifier: "daleSegue", sender: nil)
+            let newMessage = Message(type: .Server, text: "obrigado meu pirraia!\n algum comentário sobre a merda que deu?")
+            ChatHelper.shared.chat.append(newMessage)
+            ChatHelper.shared.curentImputType = .Comment
+            self.tableView.reloadData()
         }
+    }
+    
+    func sendComment(comment: String) {
+        print(comment)
     }
 }

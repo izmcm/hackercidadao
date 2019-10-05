@@ -16,6 +16,7 @@
 		15A499F62348084C00DBBE0A /* SelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499F52348084C00DBBE0A /* SelectionTableViewCell.swift */; };
 		15A499F82348086600DBBE0A /* BooleanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499F72348086600DBBE0A /* BooleanTableViewCell.swift */; };
 		15A499FA2348088B00DBBE0A /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499F92348088B00DBBE0A /* SliderTableViewCell.swift */; };
+		15A499FC2348C92900DBBE0A /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A499FB2348C92900DBBE0A /* CommentTableViewCell.swift */; };
 		511D71B288384600EDDEA04F /* Pods_ATT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201DB110641353AFF31D517A /* Pods_ATT.framework */; };
 		9851C5A12347BF2700468986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851C5A02347BF2700468986 /* AppDelegate.swift */; };
 		9851C5A32347BF2700468986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851C5A22347BF2700468986 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		15A499F52348084C00DBBE0A /* SelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTableViewCell.swift; sourceTree = "<group>"; };
 		15A499F72348086600DBBE0A /* BooleanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanTableViewCell.swift; sourceTree = "<group>"; };
 		15A499F92348088B00DBBE0A /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		15A499FB2348C92900DBBE0A /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		15D3791EA5B60B59C91ABF45 /* Pods-ATT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATT.debug.xcconfig"; path = "Target Support Files/Pods-ATT/Pods-ATT.debug.xcconfig"; sourceTree = "<group>"; };
 		201DB110641353AFF31D517A /* Pods_ATT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9851C59D2347BF2700468986 /* ATT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 				15A499F52348084C00DBBE0A /* SelectionTableViewCell.swift */,
 				15A499F72348086600DBBE0A /* BooleanTableViewCell.swift */,
 				15A499F92348088B00DBBE0A /* SliderTableViewCell.swift */,
+				15A499FB2348C92900DBBE0A /* CommentTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				15A499F82348086600DBBE0A /* BooleanTableViewCell.swift in Sources */,
 				15A499F12348068000DBBE0A /* ChatHelper.swift in Sources */,
 				15A499EF2347F8E900DBBE0A /* FirebaseHelper.swift in Sources */,
+				15A499FC2348C92900DBBE0A /* CommentTableViewCell.swift in Sources */,
 				15A499F62348084C00DBBE0A /* SelectionTableViewCell.swift in Sources */,
 				15A499F42348081D00DBBE0A /* TextMessageTableViewCell.swift in Sources */,
 				15A499FA2348088B00DBBE0A /* SliderTableViewCell.swift in Sources */,
