@@ -102,7 +102,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="PhR-XT-F2a" firstAttribute="centerX" secondItem="mga-Vd-PAT" secondAttribute="centerX" id="N6p-Qg-fPs"/>
                                                         <constraint firstItem="PhR-XT-F2a" firstAttribute="centerY" secondItem="mga-Vd-PAT" secondAttribute="centerY" id="P1v-hc-dgN"/>
@@ -163,7 +163,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="5gR-5B-Xgl" firstAttribute="height" secondItem="OZh-82-ztZ" secondAttribute="height" id="ARk-fM-Ag4"/>
                                                         <constraint firstItem="5gR-5B-Xgl" firstAttribute="centerX" secondItem="OZh-82-ztZ" secondAttribute="centerX" id="GDb-Na-RpW"/>
@@ -344,8 +344,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="digite aqui algum comentario se achar necessario " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLa-KE-1q8">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu comentário" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLa-KE-1q8">
                                                     <rect key="frame" x="8" y="10" width="398" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="WlH-es-P2D"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
