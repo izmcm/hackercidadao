@@ -88,6 +88,34 @@ extension ChatViewController: UITableViewDataSource{
             switch ChatHelper.shared.curentImputType! {
             case .Boolean:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "buttonsCell") as! BooleanTableViewCell
+                
+                if locationSended == false {
+                    cell.btnNo.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    cell.btnNo.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+                    cell.btnNo.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                    cell.btnNo.layer.borderWidth = 1
+                    cell.btnNo.layer.cornerRadius = 22
+                    
+                    cell.btnYes.tintColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+                    cell.btnYes.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                    cell.btnYes.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                    cell.btnYes.layer.borderWidth = 1
+                    cell.btnYes.layer.cornerRadius = 22     
+                } else {
+                    cell.btnYes.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    cell.btnYes.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+                    cell.btnYes.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                    cell.btnYes.layer.borderWidth = 1
+                    cell.btnYes.layer.cornerRadius = 22
+                    
+                    cell.btnNo.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    cell.btnNo.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+                    cell.btnNo.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                    cell.btnNo.layer.borderWidth = 1
+                    cell.btnNo.layer.cornerRadius = 22
+                }
+                
+                
                 cell.delegate = self
                 return cell
             case .Selection:

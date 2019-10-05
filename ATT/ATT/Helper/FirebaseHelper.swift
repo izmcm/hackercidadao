@@ -33,6 +33,7 @@ class FirebaseHelper {
             "time": Date().timeIntervalSince1970,
             "flag": 0
         ]) { (error) in
+            print(error?.localizedDescription)
             if error == nil{
                 block()
             }
