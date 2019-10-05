@@ -9,7 +9,6 @@
 import UIKit
 
 protocol BooleanTableCellDelegate {
-    
     func tappedYes()
 }
 

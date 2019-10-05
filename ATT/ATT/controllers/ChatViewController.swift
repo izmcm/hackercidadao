@@ -46,7 +46,7 @@ class ChatViewController: UIViewController {
                 print("rua:",mark?.thoroughfare)
                 print("número:",mark?.subThoroughfare)
                 
-                FirebaseHelper.share.sendAdress(cidade: mark?.locality ?? "", bairro: mark?.subLocality ?? "", rua: mark?.thoroughfare ?? "", numero: mark?.subThoroughfare ?? "", block: {
+                FirebaseHelper.share.sendAdress(cidade: mark?.locality ?? "", bairro: mark?.subLocality ?? "", rua: mark?.thoroughfare ?? "", numero: mark?.subThoroughfare ?? "", lat: self.location?.coordinate.latitude ?? 0, lon: self.location?.coordinate.longitude ?? 0, block: {
                     let newMessage = Message(type: .Server, text: "Quantas vítimas o acidente possui?")
                     ChatHelper.shared.chat.append(newMessage)
                     ChatHelper.shared.curentImputType = .Selection
@@ -101,6 +101,7 @@ extension ChatViewController: UITableViewDataSource{
                 return cell
             case .Slider:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell") as! SliderTableViewCell
+                cell.delegate = self
                 return cell
             }
         }
@@ -109,7 +110,8 @@ extension ChatViewController: UITableViewDataSource{
     }
 }
 
-extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate {
+extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, SliderCellDelegate {
+    
     func tappedNumber(input: String) {
         let newMessage = Message(type: .User, text: input)
         ChatHelper.shared.chat.append(newMessage)
@@ -130,8 +132,16 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate {
             self.fetchLocationFrom(location: location!)
             self.locationSended = true
         }else{
-            
+            FirebaseHelper.share.sendHasDesmaio(value: true) {
+                let newMessage = Message(type: .Server, text: "Qual é o nivel de gravidade do acidente?")
+                ChatHelper.shared.chat.append(newMessage)
+                ChatHelper.shared.curentImputType = .Slider
+                self.tableView.reloadData()
+            }
         }
-        
+    }
+    
+    func sendSlideData(value: Int) {
+        print(value)
     }
 }

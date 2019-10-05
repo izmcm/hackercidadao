@@ -6,16 +6,18 @@
 //  Copyright © 2019 hackercidadao. All rights reserved.
 //
 
-import UIKit
-
-protocol SliderTableCellDelegate {
-    func tapped()
+protocol SliderCellDelegate {
+    func sendSlideData(value: Int)
 }
+
+import UIKit
 
 class SliderTableViewCell: UITableViewCell {
     @IBOutlet weak var btnSend: UIButton!
     
     @IBOutlet weak var slider: UISlider!
+    
+    var delegate: SliderCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,5 +31,6 @@ class SliderTableViewCell: UITableViewCell {
     }
 
     @IBAction func btnSendTapped(_ sender: Any) {
+        self.delegate?.sendSlideData(value: Int(self.slider.value))
     }
 }

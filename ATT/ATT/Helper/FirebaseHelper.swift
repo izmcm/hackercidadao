@@ -35,12 +35,14 @@ class FirebaseHelper {
         }
     }
     
-    func sendAdress(cidade: String, bairro: String, rua: String, numero: String, block: @escaping (()->Void)){
+    func sendAdress(cidade: String, bairro: String, rua: String, numero: String, lat: Double, lon: Double, block: @escaping (()->Void)){
         self.db.collection("Occurrence").document(self.id!).updateData([
         "cidade": cidade,
         "bairro": bairro,
         "rua": rua,
-        "numero": numero
+        "numero": numero,
+        "lat": lat,
+        "lon": lon
         ]) { (error) in
             if error == nil{
                 block()
@@ -62,6 +64,16 @@ class FirebaseHelper {
         let imageData:NSData = image.jpegData(compressionQuality: 0.4)! as NSData
            let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
            return strBase64
+    }
+    
+    func sendHasDesmaio(value: Bool, block: @escaping (()->Void)){
+        self.db.collection("Occurrence").document(self.id!).updateData([
+        "desmaio": value
+        ]) { (error) in
+            if error == nil{
+                block()
+            }
+        }
     }
     
 }
