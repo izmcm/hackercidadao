@@ -28,7 +28,10 @@ class FirebaseHelper {
         
         let imgBase64 = self.convertImageToBase64(image)
         
-        self.db.collection("Occurrence").document(self.id!).setData(["image" : imgBase64]) { (error) in
+        self.db.collection("Occurrence").document(self.id!).setData([
+            "image" : imgBase64,
+            "time": Date().timeIntervalSince1970
+        ]) { (error) in
             if error == nil{
                 block()
             }
@@ -60,12 +63,6 @@ class FirebaseHelper {
         }
     }
     
-    private func convertImageToBase64(_ image: UIImage) -> String {
-        let imageData:NSData = image.jpegData(compressionQuality: 0.4)! as NSData
-           let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
-           return strBase64
-    }
-    
     func sendHasDesmaio(value: Bool, block: @escaping (()->Void)){
         self.db.collection("Occurrence").document(self.id!).updateData([
         "desmaio": value
@@ -74,6 +71,12 @@ class FirebaseHelper {
                 block()
             }
         }
+    }
+    
+    private func convertImageToBase64(_ image: UIImage) -> String {
+        let imageData:NSData = image.jpegData(compressionQuality: 0.4)! as NSData
+           let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+           return strBase64
     }
     
 }
