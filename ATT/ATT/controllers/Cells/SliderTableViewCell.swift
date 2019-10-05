@@ -35,7 +35,7 @@ class SliderTableViewCell: UITableViewCell {
         self.btnSend.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.btnSend.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.btnSend.layer.borderWidth = 1
-        self.btnSend.layer.cornerRadius = 30
+        self.btnSend.layer.cornerRadius = 22
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

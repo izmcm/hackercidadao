@@ -31,14 +31,14 @@ class BooleanTableViewCell: UITableViewCell {
         self.btnNo.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
         self.btnNo.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.btnNo.layer.borderWidth = 1
-        self.btnNo.layer.cornerRadius = 30
+        self.btnNo.layer.cornerRadius = 22
         
         
         self.btnYes.tintColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
         self.btnYes.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.btnYes.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.btnYes.layer.borderWidth = 1
-        self.btnYes.layer.cornerRadius = 30
+        self.btnYes.layer.cornerRadius = 22
 
 
         

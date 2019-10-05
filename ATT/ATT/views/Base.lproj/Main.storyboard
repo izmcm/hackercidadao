@@ -218,14 +218,14 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQH-SQ-Jxc">
                                                             <rect key="frame" x="0.0" y="0.0" width="177" height="60"/>
-                                                            <state key="normal" title="NÃO"/>
+                                                            <state key="normal" title="Não"/>
                                                             <connections>
                                                                 <action selector="btnNoTapped:" destination="uQT-Pm-Zkh" eventType="touchUpInside" id="6MO-bE-Jf8"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3W-Xm-b1i">
                                                             <rect key="frame" x="197" y="0.0" width="177" height="60"/>
-                                                            <state key="normal" title="SIM"/>
+                                                            <state key="normal" title="Sim"/>
                                                             <connections>
                                                                 <action selector="btnYesTapped:" destination="uQT-Pm-Zkh" eventType="touchUpInside" id="qsJ-ZF-mN9"/>
                                                             </connections>
@@ -271,7 +271,7 @@
                                                         <action selector="btnSendTapped:" destination="E1Y-sN-vUJ" eventType="touchUpInside" id="OTO-b2-DMz"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVINHO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKm-RX-qSb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKm-RX-qSb">
                                                     <rect key="frame" x="30" y="27" width="292" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.5" id="nx1-rA-xEe"/>
@@ -326,18 +326,18 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9Rc-1I-51o">
                                                     <rect key="frame" x="20" y="150" width="374" height="44"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkh-VX-kwB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
-                                                            <state key="normal" title="COMENTAR"/>
-                                                            <connections>
-                                                                <action selector="sendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="j1I-nK-FPC"/>
-                                                            </connections>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-rR-99y">
-                                                            <rect key="frame" x="187" y="0.0" width="187" height="44"/>
-                                                            <state key="normal" title="NÃO COMENTAR"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
+                                                            <state key="normal" title="Não"/>
                                                             <connections>
                                                                 <action selector="notSendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="d9g-Ye-rEs"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkh-VX-kwB">
+                                                            <rect key="frame" x="187" y="0.0" width="187" height="44"/>
+                                                            <state key="normal" title="Sim"/>
+                                                            <connections>
+                                                                <action selector="sendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="j1I-nK-FPC"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
