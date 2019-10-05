@@ -13,7 +13,8 @@ class ChatViewController: UIViewController {
     
     var img: UIImage?
     var location: CLLocation?
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +23,16 @@ class ChatViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         guard let location = self.location else{ return }
-        self.fetchLocationFrom(location: location)
+//        self.fetchLocationFrom(location: location)
+        guard let img = self.img else {return}
+        
+        FirebaseHelper.share.sendImage(image: img, block: {
+            let newMessage = Message(type: .Server, text: "Pronto, recebi a sua foto!\n Você pode compartilhar a sua localização para que possamos atender as vítimas?")
+            ChatHelper.shared.chat.append(newMessage)
+            ChatHelper.shared.curentImputType = .Boolean
+            self.tableView.reloadData()
+        })
+        
     }
     
     func fetchLocationFrom(location: CLLocation){
@@ -36,7 +46,6 @@ class ChatViewController: UIViewController {
                 print("número:",mark?.subThoroughfare)
                 
                 FirebaseHelper.share.sendAdress(cidade: mark?.locality ?? "", bairro: mark?.subLocality ?? "", rua: mark?.thoroughfare ?? "", numero: mark?.subThoroughfare ?? "")
-                
             }
         }
     }
@@ -44,7 +53,11 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if ChatHelper.shared.curentImputType != nil{
+            return 2
+        }else{
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,7 +84,7 @@ extension ChatViewController: UITableViewDataSource{
                 return cell
             }
         }else{
-            switch ChatHelper.shared.curentImputType {
+            switch ChatHelper.shared.curentImputType! {
             case .Boolean:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "buttonsCell") as! BooleanTableViewCell
                 return cell

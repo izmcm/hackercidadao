@@ -22,17 +22,36 @@ class FirebaseHelper {
         db = Firestore.firestore()
     }
     
-    func sendAdress(cidade: String, bairro: String, rua: String, numero: String){
+    func sendImage(image: UIImage, block: @escaping (()->Void)){
+        
         self.id = NSUUID().uuidString
         
-        self.db.collection("Occurrence").document(self.id!).setData([
-        "cidade":cidade,
-        "bairro":bairro,
-        "rua":rua,
-        "numero":numero
-        ]) { (error) in
-            print(error?.localizedDescription)
+        let imgBase64 = self.convertImageToBase64(image)
+        
+        self.db.collection("Occurrence").document(self.id!).setData(["image" : imgBase64]) { (error) in
+            if error == nil{
+                block()
+            }
         }
+    }
+    
+    func sendAdress(cidade: String, bairro: String, rua: String, numero: String){
+        self.db.collection("Occurrence").document(self.id!).setData([
+        "cidade": cidade,
+        "bairro": bairro,
+        "rua": rua,
+        "numero": numero
+        ]) { (error) in
+            if error == nil{
+                print("deu bom")
+            }
+        }
+    }
+    
+    private func convertImageToBase64(_ image: UIImage) -> String {
+        let imageData:NSData = image.jpegData(compressionQuality: 0.4)! as NSData
+           let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+           return strBase64
     }
     
 }
