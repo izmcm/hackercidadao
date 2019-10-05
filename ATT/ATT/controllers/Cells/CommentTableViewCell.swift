@@ -15,14 +15,25 @@ protocol CommentTableViewCellDelegate {
 class CommentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var txtComment: UITextField!
+    
+    @IBOutlet weak var dontSendButton: UIButton!
+    
     var delegate: CommentTableViewCellDelegate?
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
+        // Set visuals for cells buttons etc
         self.txtComment.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
         self.txtComment.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        self.dontSendButton.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.dontSendButton.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+        self.dontSendButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.dontSendButton.layer.borderWidth = 1
+        self.dontSendButton.layer.cornerRadius = 22
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,11 +42,9 @@ class CommentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func sendTapped(){
-        self.delegate?.sendComment(comment: self.txtComment.text ?? "")
-    }
-    
     @IBAction func notSendTapped(){
         self.delegate?.sendComment(comment: "")
     }
+    
+
 }

@@ -92,10 +92,24 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mga-Vd-PAT">
                                                     <rect key="frame" x="10" y="20" width="40" height="40"/>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="PhR-XT-F2a">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="20"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="PhR-XT-F2a" firstAttribute="centerX" secondItem="mga-Vd-PAT" secondAttribute="centerX" id="N6p-Qg-fPs"/>
+                                                        <constraint firstItem="PhR-XT-F2a" firstAttribute="centerY" secondItem="mga-Vd-PAT" secondAttribute="centerY" id="P1v-hc-dgN"/>
                                                         <constraint firstAttribute="width" constant="40" id="XqC-vy-WiB"/>
+                                                        <constraint firstItem="PhR-XT-F2a" firstAttribute="height" secondItem="mga-Vd-PAT" secondAttribute="height" id="cEc-eB-SKT"/>
                                                         <constraint firstAttribute="height" constant="40" id="m4U-xX-Kv8"/>
+                                                        <constraint firstItem="PhR-XT-F2a" firstAttribute="width" secondItem="mga-Vd-PAT" secondAttribute="width" id="msx-6t-TIj"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -141,7 +155,7 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZh-82-ztZ">
                                                     <rect key="frame" x="364" y="20" width="40" height="40"/>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="b8K-mQ-1gt"/>
                                                         <constraint firstAttribute="height" constant="40" id="tAW-q1-kbQ"/>
@@ -328,7 +342,7 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-rR-99y">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                                            <state key="normal" title="Não"/>
+                                                            <state key="normal" title="Não enviar"/>
                                                             <connections>
                                                                 <action selector="notSendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="d9g-Ye-rEs"/>
                                                             </connections>
@@ -350,6 +364,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dontSendButton" destination="o6J-rR-99y" id="sM9-Dj-QmO"/>
                                             <outlet property="txtComment" destination="NLa-KE-1q8" id="5Zj-YK-gKU"/>
                                         </connections>
                                     </tableViewCell>
@@ -414,4 +429,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cross" width="250" height="250"/>
+    </resources>
 </document>
