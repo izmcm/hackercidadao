@@ -14,6 +14,7 @@ class ChatViewController: UIViewController {
     var img: UIImage?
     var location: CLLocation?
     @IBOutlet weak var tableView: UITableView!
+    var locationSended = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,14 +111,27 @@ extension ChatViewController: UITableViewDataSource{
 
 extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate {
     func tappedNumber(input: String) {
-        print(input)
+        let newMessage = Message(type: .User, text: input)
+        ChatHelper.shared.chat.append(newMessage)
+        
+        FirebaseHelper.share.sendVictimsNumber(value: input) {
+            let newMessage = Message(type: .Server, text: "Há vítmas de inconcientes?")
+            ChatHelper.shared.chat.append(newMessage)
+            ChatHelper.shared.curentImputType = .Boolean
+            self.tableView.reloadData()
+        }
     }
     
     func tappedYes() {
         let newMessage = Message(type: .User, text: "Sim")
         ChatHelper.shared.chat.append(newMessage)
-        self.fetchLocationFrom(location: location!)
+        
+        if self.locationSended == false{
+            self.fetchLocationFrom(location: location!)
+            self.locationSended = true
+        }else{
+            
+        }
+        
     }
-    
-    
 }

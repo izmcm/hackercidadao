@@ -36,11 +36,21 @@ class FirebaseHelper {
     }
     
     func sendAdress(cidade: String, bairro: String, rua: String, numero: String, block: @escaping (()->Void)){
-        self.db.collection("Occurrence").document(self.id!).setData([
+        self.db.collection("Occurrence").document(self.id!).updateData([
         "cidade": cidade,
         "bairro": bairro,
         "rua": rua,
         "numero": numero
+        ]) { (error) in
+            if error == nil{
+                block()
+            }
+        }
+    }
+    
+    func sendVictimsNumber(value: String, block: @escaping (()->Void)){
+        self.db.collection("Occurrence").document(self.id!).updateData([
+        "Victims_number": value
         ]) { (error) in
             if error == nil{
                 block()
