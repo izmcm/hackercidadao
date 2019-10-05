@@ -214,34 +214,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MQd-j7-7dp">
-                                                    <rect key="frame" x="0.0" y="10" width="414" height="60"/>
+                                                    <rect key="frame" x="20" y="10" width="374" height="60"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3W-Xm-b1i">
-                                                            <rect key="frame" x="0.0" y="0.0" width="197" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="HO8-VS-Pf8"/>
-                                                            </constraints>
-                                                            <state key="normal" title="SIM"/>
-                                                            <connections>
-                                                                <action selector="btnYesTapped:" destination="uQT-Pm-Zkh" eventType="touchUpInside" id="qsJ-ZF-mN9"/>
-                                                            </connections>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQH-SQ-Jxc">
-                                                            <rect key="frame" x="217" y="0.0" width="197" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="gev-sc-xwQ"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="0.0" y="0.0" width="177" height="60"/>
                                                             <state key="normal" title="NÃO"/>
                                                             <connections>
                                                                 <action selector="btnNoTapped:" destination="uQT-Pm-Zkh" eventType="touchUpInside" id="6MO-bE-Jf8"/>
                                                             </connections>
                                                         </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3W-Xm-b1i">
+                                                            <rect key="frame" x="197" y="0.0" width="177" height="60"/>
+                                                            <state key="normal" title="SIM"/>
+                                                            <connections>
+                                                                <action selector="btnYesTapped:" destination="uQT-Pm-Zkh" eventType="touchUpInside" id="qsJ-ZF-mN9"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="Sxa-7x-mGu"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MQd-j7-7dp" firstAttribute="leading" secondItem="wdM-Xx-JYY" secondAttribute="leading" id="1uz-sC-fK5"/>
-                                                <constraint firstAttribute="trailing" secondItem="MQd-j7-7dp" secondAttribute="trailing" id="MZq-JX-Kj1"/>
+                                                <constraint firstItem="MQd-j7-7dp" firstAttribute="leading" secondItem="wdM-Xx-JYY" secondAttribute="leading" constant="20" id="1uz-sC-fK5"/>
+                                                <constraint firstAttribute="trailing" secondItem="MQd-j7-7dp" secondAttribute="trailing" constant="20" id="MZq-JX-Kj1"/>
                                                 <constraint firstAttribute="bottom" secondItem="MQd-j7-7dp" secondAttribute="bottom" constant="10" id="QYq-MB-2wK"/>
                                                 <constraint firstItem="MQd-j7-7dp" firstAttribute="top" secondItem="wdM-Xx-JYY" secondAttribute="top" constant="10" id="y6k-oU-D8V"/>
                                             </constraints>
@@ -259,35 +256,108 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="ET0-c4-3rv">
-                                                    <rect key="frame" x="28" y="35" width="358" height="21"/>
+                                                    <rect key="frame" x="28" y="66" width="358" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="hf1-AN-OHn"/>
                                                     </constraints>
                                                 </slider>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKp-n9-I7H">
-                                                    <rect key="frame" x="186" y="86" width="42" height="40"/>
+                                                    <rect key="frame" x="40" y="106" width="334" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="qtV-8E-w2v"/>
+                                                        <constraint firstAttribute="height" constant="44" id="qtV-8E-w2v"/>
                                                     </constraints>
-                                                    <state key="normal" title="Enviar"/>
+                                                    <state key="normal" title="ENVIAR"/>
                                                     <connections>
                                                         <action selector="btnSendTapped:" destination="E1Y-sN-vUJ" eventType="touchUpInside" id="OTO-b2-DMz"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVINHO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKm-RX-qSb">
+                                                    <rect key="frame" x="30" y="27" width="292" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="nx1-rA-xEe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="GRAVE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d84-FH-drj">
+                                                    <rect key="frame" x="330" y="27" width="54" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="QcR-ds-FWa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ET0-c4-3rv" firstAttribute="top" secondItem="XKm-RX-qSb" secondAttribute="bottom" constant="18.5" id="25x-oI-5Df"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ET0-c4-3rv" secondAttribute="trailing" constant="10" id="2ZG-D3-uU0"/>
+                                                <constraint firstItem="XKm-RX-qSb" firstAttribute="top" secondItem="KMq-kg-5b9" secondAttribute="top" constant="27" id="2cF-aL-Itn"/>
                                                 <constraint firstItem="ET0-c4-3rv" firstAttribute="centerX" secondItem="KMq-kg-5b9" secondAttribute="centerX" id="4y1-tx-Gsz"/>
-                                                <constraint firstItem="GKp-n9-I7H" firstAttribute="centerX" secondItem="KMq-kg-5b9" secondAttribute="centerX" id="AHB-vU-HbW"/>
-                                                <constraint firstAttribute="bottom" secondItem="GKp-n9-I7H" secondAttribute="bottom" constant="44" id="G4c-qT-UdH"/>
-                                                <constraint firstItem="GKp-n9-I7H" firstAttribute="top" secondItem="ET0-c4-3rv" secondAttribute="bottom" constant="31" id="KYa-Wi-fb5"/>
+                                                <constraint firstItem="XKm-RX-qSb" firstAttribute="leading" secondItem="ET0-c4-3rv" secondAttribute="leading" id="8jK-8b-1IO"/>
+                                                <constraint firstItem="GKp-n9-I7H" firstAttribute="leading" secondItem="KMq-kg-5b9" secondAttribute="leadingMargin" constant="20" id="9rC-oT-0tO"/>
+                                                <constraint firstItem="d84-FH-drj" firstAttribute="leading" secondItem="XKm-RX-qSb" secondAttribute="trailing" constant="8" id="E7l-A3-4qv"/>
+                                                <constraint firstAttribute="bottom" secondItem="GKp-n9-I7H" secondAttribute="bottom" constant="20" id="G4c-qT-UdH"/>
+                                                <constraint firstItem="GKp-n9-I7H" firstAttribute="top" secondItem="ET0-c4-3rv" secondAttribute="bottom" constant="20" id="KYa-Wi-fb5"/>
                                                 <constraint firstItem="ET0-c4-3rv" firstAttribute="leading" secondItem="KMq-kg-5b9" secondAttribute="leadingMargin" constant="10" id="T9s-ag-y6a"/>
-                                                <constraint firstItem="ET0-c4-3rv" firstAttribute="top" secondItem="KMq-kg-5b9" secondAttribute="top" constant="35" id="qYW-q2-hxB"/>
+                                                <constraint firstItem="d84-FH-drj" firstAttribute="trailing" secondItem="ET0-c4-3rv" secondAttribute="trailing" id="Yi4-LE-Men"/>
+                                                <constraint firstItem="d84-FH-drj" firstAttribute="top" secondItem="KMq-kg-5b9" secondAttribute="top" constant="27" id="i4f-bI-NnU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GKp-n9-I7H" secondAttribute="trailing" constant="20" id="keP-bO-yng"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnSend" destination="GKp-n9-I7H" id="Ryq-2m-GMW"/>
                                             <outlet property="slider" destination="ET0-c4-3rv" id="qGZ-tU-Spd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="200" id="NxD-JZ-GMD" customClass="CommentTableViewCell" customModule="ATT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="518" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NxD-JZ-GMD" id="ZQ2-qd-N1m">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="digite aqui algum comentario se achar necessario " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLa-KE-1q8">
+                                                    <rect key="frame" x="8" y="10" width="398" height="120"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9Rc-1I-51o">
+                                                    <rect key="frame" x="20" y="150" width="374" height="44"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkh-VX-kwB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
+                                                            <state key="normal" title="COMENTAR"/>
+                                                            <connections>
+                                                                <action selector="sendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="j1I-nK-FPC"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-rR-99y">
+                                                            <rect key="frame" x="187" y="0.0" width="187" height="44"/>
+                                                            <state key="normal" title="NÃO COMENTAR"/>
+                                                            <connections>
+                                                                <action selector="notSendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="d9g-Ye-rEs"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="5bI-G0-oUg"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="NLa-KE-1q8" secondAttribute="trailing" constant="8" id="EN1-ZI-GOr"/>
+                                                <constraint firstItem="NLa-KE-1q8" firstAttribute="top" secondItem="ZQ2-qd-N1m" secondAttribute="top" constant="10" id="ISI-Pp-ewo"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Rc-1I-51o" secondAttribute="trailing" constant="20" id="UlG-hO-afU"/>
+                                                <constraint firstItem="9Rc-1I-51o" firstAttribute="leading" secondItem="ZQ2-qd-N1m" secondAttribute="leading" constant="20" id="WPd-cM-FoU"/>
+                                                <constraint firstAttribute="bottom" secondItem="9Rc-1I-51o" secondAttribute="bottom" constant="6" id="laE-6j-xWS"/>
+                                                <constraint firstItem="9Rc-1I-51o" firstAttribute="top" secondItem="NLa-KE-1q8" secondAttribute="bottom" constant="20" id="nxL-eT-fYp"/>
+                                                <constraint firstItem="NLa-KE-1q8" firstAttribute="leading" secondItem="ZQ2-qd-N1m" secondAttribute="leading" constant="8" id="wpu-Lv-6Lo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="txtComment" destination="NLa-KE-1q8" id="5Zj-YK-gKU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -314,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DuL-T6-s0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="110"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="109.82142857142857"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ent-aK-v7Y">

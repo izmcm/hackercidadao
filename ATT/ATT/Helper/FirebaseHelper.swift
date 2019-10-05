@@ -31,7 +31,7 @@ class FirebaseHelper {
         self.db.collection("Occurrence").document(self.id!).setData([
             "image" : imgBase64,
             "time": Date().timeIntervalSince1970,
-            "fag": 0
+            "flag": 0
         ]) { (error) in
             if error == nil{
                 block()
