@@ -379,6 +379,7 @@
                     <navigationItem key="navigationItem" id="et4-Rs-9Nq"/>
                     <connections>
                         <outlet property="tableView" destination="dwt-CN-zlQ" id="6W7-mx-G8Q"/>
+                        <outlet property="tableViewBottomConstrant" destination="p7R-MT-uqW" id="87J-2h-4LB"/>
                         <segue destination="Czi-fi-oPJ" kind="show" identifier="daleSegue" id="yao-6a-JIj"/>
                     </connections>
                 </viewController>
