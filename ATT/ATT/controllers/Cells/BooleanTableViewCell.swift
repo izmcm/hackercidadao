@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BooleanTableCellDelegate {
-    func tappedYes()
+    func tapped(status: Bool)
 }
 
 class BooleanTableViewCell: UITableViewCell {
@@ -30,9 +30,10 @@ class BooleanTableViewCell: UITableViewCell {
     }
 
     @IBAction func btnNoTapped(_ sender: Any) {
+        delegate?.tapped(status: false)
     }
     
     @IBAction func btnYesTapped(_ sender: Any) {
-        delegate?.tappedYes()
+        delegate?.tapped(status: true)
     }
 }

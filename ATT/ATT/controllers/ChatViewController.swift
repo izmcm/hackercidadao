@@ -124,15 +124,23 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
         }
     }
     
-    func tappedYes() {
-        let newMessage = Message(type: .User, text: "Sim")
+    func tapped(status: Bool) {
+        let text = status ? "Sim" : "Não"
+        let newMessage = Message(type: .User, text: text)
         ChatHelper.shared.chat.append(newMessage)
         
         if self.locationSended == false{
-            self.fetchLocationFrom(location: location!)
             self.locationSended = true
+            if status == true{
+                self.fetchLocationFrom(location: location!)
+            }else{
+                let newMessage = Message(type: .Server, text: "Quantas vítimas o acidente possui?")
+                ChatHelper.shared.chat.append(newMessage)
+                ChatHelper.shared.curentImputType = .Selection
+                self.tableView.reloadData()
+            }
         }else{
-            FirebaseHelper.share.sendHasDesmaio(value: true) {
+            FirebaseHelper.share.sendHasDesmaio(value: status) {
                 let newMessage = Message(type: .Server, text: "Qual é o nivel de gravidade do acidente?")
                 ChatHelper.shared.chat.append(newMessage)
                 ChatHelper.shared.curentImputType = .Slider
