@@ -142,6 +142,8 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
     }
     
     func sendSlideData(value: Int) {
-        print(value)
+        FirebaseHelper.share.sendGravidade(value: value) {
+            self.performSegue(withIdentifier: "daleSegue", sender: nil)
+        }
     }
 }

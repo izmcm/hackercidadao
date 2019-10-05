@@ -73,6 +73,16 @@ class FirebaseHelper {
         }
     }
     
+    func sendGravidade(value: Int, block: @escaping (()->Void)){
+        self.db.collection("Occurrence").document(self.id!).updateData([
+        "gravidade": value
+        ]) { (error) in
+            if error == nil{
+                block()
+            }
+        }
+    }
+    
     private func convertImageToBase64(_ image: UIImage) -> String {
         let imageData:NSData = image.jpegData(compressionQuality: 0.4)! as NSData
            let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
