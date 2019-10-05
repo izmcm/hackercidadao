@@ -17,13 +17,13 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         guard let location = self.location else{ return }
-//        self.fetchLocationFrom(location: location)
+        
         guard let img = self.img else {return}
         
         FirebaseHelper.share.sendImage(image: img, block: {
@@ -45,7 +45,12 @@ class ChatViewController: UIViewController {
                 print("rua:",mark?.thoroughfare)
                 print("número:",mark?.subThoroughfare)
                 
-                FirebaseHelper.share.sendAdress(cidade: mark?.locality ?? "", bairro: mark?.subLocality ?? "", rua: mark?.thoroughfare ?? "", numero: mark?.subThoroughfare ?? "")
+                FirebaseHelper.share.sendAdress(cidade: mark?.locality ?? "", bairro: mark?.subLocality ?? "", rua: mark?.thoroughfare ?? "", numero: mark?.subThoroughfare ?? "", block: {
+                    let newMessage = Message(type: .Server, text: "Quantas vítimas o acidente possui?")
+                    ChatHelper.shared.chat.append(newMessage)
+                    ChatHelper.shared.curentImputType = .Selection
+                    self.tableView.reloadData()
+                })
             }
         }
     }
@@ -87,11 +92,13 @@ extension ChatViewController: UITableViewDataSource{
             switch ChatHelper.shared.curentImputType! {
             case .Boolean:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "buttonsCell") as! BooleanTableViewCell
+                cell.delegate = self
                 return cell
-                case .Selection:
+            case .Selection:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "segmentCell") as! SelectionTableViewCell
+                cell.delegate = self
                 return cell
-                case .Slider:
+            case .Slider:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell") as! SliderTableViewCell
                 return cell
             }
@@ -99,4 +106,18 @@ extension ChatViewController: UITableViewDataSource{
         
         return UITableViewCell()
     }
+}
+
+extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate {
+    func tappedNumber(input: String) {
+        print(input)
+    }
+    
+    func tappedYes() {
+        let newMessage = Message(type: .User, text: "Sim")
+        ChatHelper.shared.chat.append(newMessage)
+        self.fetchLocationFrom(location: location!)
+    }
+    
+    
 }

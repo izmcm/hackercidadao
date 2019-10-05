@@ -35,7 +35,7 @@ class FirebaseHelper {
         }
     }
     
-    func sendAdress(cidade: String, bairro: String, rua: String, numero: String){
+    func sendAdress(cidade: String, bairro: String, rua: String, numero: String, block: @escaping (()->Void)){
         self.db.collection("Occurrence").document(self.id!).setData([
         "cidade": cidade,
         "bairro": bairro,
@@ -43,7 +43,7 @@ class FirebaseHelper {
         "numero": numero
         ]) { (error) in
             if error == nil{
-                print("deu bom")
+                block()
             }
         }
     }

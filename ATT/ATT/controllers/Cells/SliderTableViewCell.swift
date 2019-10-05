@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SliderTableCellDelegate {
+    func tapped()
+}
+
 class SliderTableViewCell: UITableViewCell {
     @IBOutlet weak var btnSend: UIButton!
     

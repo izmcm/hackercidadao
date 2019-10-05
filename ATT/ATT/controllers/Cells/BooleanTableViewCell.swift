@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol BooleanTableCellDelegate {
+    
+    func tappedYes()
+}
+
 class BooleanTableViewCell: UITableViewCell {
     @IBOutlet weak var btnYes: UIButton!
     @IBOutlet weak var btnNo: UIButton!
+    
+    var delegate: BooleanTableCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,5 +34,6 @@ class BooleanTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnYesTapped(_ sender: Any) {
+        delegate?.tappedYes()
     }
 }
