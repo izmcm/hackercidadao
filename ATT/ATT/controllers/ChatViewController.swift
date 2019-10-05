@@ -158,7 +158,7 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
         ChatHelper.shared.chat.append(newMessage)
         
         FirebaseHelper.share.sendVictimsNumber(value: input) {
-            let newMessage = Message(type: .Server, text: "Há vítmas de inconcientes?")
+            let newMessage = Message(type: .Server, text: "Há vítimas inconscientes?")
             ChatHelper.shared.chat.append(newMessage)
             ChatHelper.shared.curentImputType = .Boolean
             self.tableView.reloadData()
@@ -175,14 +175,14 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
             if status == true{
                 self.fetchLocationFrom(location: location!)
             }else{
-                let newMessage = Message(type: .Server, text: "Quantas vítimas o acidente possui?")
+                let newMessage = Message(type: .Server, text: "Quantas vítimas teve o acidente?")
                 ChatHelper.shared.chat.append(newMessage)
                 ChatHelper.shared.curentImputType = .Selection
                 self.tableView.reloadData()
             }
         }else{
             FirebaseHelper.share.sendHasDesmaio(value: status) {
-                let newMessage = Message(type: .Server, text: "Qual é o nivel de gravidade do acidente?")
+                let newMessage = Message(type: .Server, text: "Qual é o nível de gravidade do acidente?")
                 ChatHelper.shared.chat.append(newMessage)
                 ChatHelper.shared.curentImputType = .Slider
                 self.tableView.reloadData()
@@ -192,7 +192,7 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
     
     func sendSlideData(value: Int) {
         FirebaseHelper.share.sendGravidade(value: value) {
-            let newMessage = Message(type: .Server, text: "obrigado meu pirraia!\n algum comentário sobre a merda que deu?")
+            let newMessage = Message(type: .Server, text: "Obrigado! Você tem algum comentário a acrescentar?")
             ChatHelper.shared.chat.append(newMessage)
             ChatHelper.shared.curentImputType = .Comment
             self.tableView.reloadData()
@@ -200,7 +200,10 @@ extension ChatViewController: BooleanTableCellDelegate, SelectionCellDelegate, S
     }
     
     func sendComment(comment: String) {
-        self.performSegue(withIdentifier: "daleSegue", sender: nil)
+        FirebaseHelper.share.sendComment(comment: comment) {
+            self.performSegue(withIdentifier: "daleSegue", sender: nil)
+        }
+        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {

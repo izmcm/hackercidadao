@@ -35,6 +35,12 @@ class CommentTableViewCell: UITableViewCell {
         self.dontSendButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.dontSendButton.layer.borderWidth = 1
         self.dontSendButton.layer.cornerRadius = 22
+        
+        self.sendButton.tintColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
+        self.sendButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.sendButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.sendButton.layer.borderWidth = 1
+        self.sendButton.layer.cornerRadius = 22
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,6 +52,7 @@ class CommentTableViewCell: UITableViewCell {
     }
     
     @IBAction func sendTapped(_ sender: Any) {
+        self.delegate?.sendComment(comment: txtComment.text ?? "")
     }
     
 
