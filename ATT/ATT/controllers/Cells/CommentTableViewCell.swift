@@ -17,15 +17,16 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var txtComment: UITextField!
     
     @IBOutlet weak var dontSendButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     
     var delegate: CommentTableViewCellDelegate?
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         // Set visuals for cells buttons etc
+        self.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
         self.txtComment.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1843137255, blue: 0.3843137255, alpha: 1)
         self.txtComment.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
@@ -44,6 +45,9 @@ class CommentTableViewCell: UITableViewCell {
     
     @IBAction func notSendTapped(){
         self.delegate?.sendComment(comment: "")
+    }
+    
+    @IBAction func sendTapped(_ sender: Any) {
     }
     
 

@@ -341,10 +341,17 @@
                                                     <rect key="frame" x="20" y="150" width="374" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-rR-99y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
                                                             <state key="normal" title="Não enviar"/>
                                                             <connections>
                                                                 <action selector="notSendTapped" destination="NxD-JZ-GMD" eventType="touchUpInside" id="d9g-Ye-rEs"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ID-fQ-OyD">
+                                                            <rect key="frame" x="187" y="0.0" width="187" height="44"/>
+                                                            <state key="normal" title="Enviar"/>
+                                                            <connections>
+                                                                <action selector="sendTapped:" destination="NxD-JZ-GMD" eventType="touchUpInside" id="ax7-xa-N9E"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -365,6 +372,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dontSendButton" destination="o6J-rR-99y" id="sM9-Dj-QmO"/>
+                                            <outlet property="sendButton" destination="2ID-fQ-OyD" id="rih-P0-de4"/>
                                             <outlet property="txtComment" destination="NLa-KE-1q8" id="5Zj-YK-gKU"/>
                                         </connections>
                                     </tableViewCell>
@@ -402,14 +410,45 @@
                     <view key="view" contentMode="scaleToFill" id="niY-Ol-LAM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obrigado pela informação! Se quiser complementar algo, favor ligar para a Central de Atendimento." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xea-fx-9Hh">
+                                <rect key="frame" x="40" y="263" width="334" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJ4-1k-RbA">
+                                <rect key="frame" x="90" y="483" width="234" height="44"/>
+                                <state key="normal" title="Ligar"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooz-1f-zDd">
+                                <rect key="frame" x="90" y="567" width="234" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Wvr-OB-5Xr"/>
+                                </constraints>
+                                <state key="normal" title="Finalizar"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.1450980392" green="0.1843137255" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pJ4-1k-RbA" firstAttribute="width" secondItem="ooz-1f-zDd" secondAttribute="width" id="OZ2-h2-L4C"/>
+                            <constraint firstItem="ooz-1f-zDd" firstAttribute="top" secondItem="pJ4-1k-RbA" secondAttribute="bottom" constant="40" id="QVk-v9-Uu1"/>
+                            <constraint firstItem="xea-fx-9Hh" firstAttribute="width" secondItem="mfm-1b-beW" secondAttribute="width" constant="-80" id="QZO-Xo-6Is"/>
+                            <constraint firstItem="pJ4-1k-RbA" firstAttribute="centerX" secondItem="mfm-1b-beW" secondAttribute="centerX" id="Qym-O9-FYm"/>
+                            <constraint firstItem="ooz-1f-zDd" firstAttribute="centerY" secondItem="mfm-1b-beW" secondAttribute="centerY" multiplier="1.3" id="WJs-VH-qIt"/>
+                            <constraint firstItem="pJ4-1k-RbA" firstAttribute="height" secondItem="ooz-1f-zDd" secondAttribute="height" id="cw1-Zg-Mif"/>
+                            <constraint firstItem="xea-fx-9Hh" firstAttribute="centerX" secondItem="mfm-1b-beW" secondAttribute="centerX" id="ibI-US-BqU"/>
+                            <constraint firstItem="ooz-1f-zDd" firstAttribute="width" secondItem="mfm-1b-beW" secondAttribute="width" constant="-180" id="jTa-YQ-aN6"/>
+                            <constraint firstItem="pJ4-1k-RbA" firstAttribute="top" secondItem="xea-fx-9Hh" secondAttribute="bottom" constant="105" id="rCb-IC-mNJ"/>
+                            <constraint firstItem="ooz-1f-zDd" firstAttribute="centerX" secondItem="mfm-1b-beW" secondAttribute="centerX" id="xyi-xB-QCC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mfm-1b-beW"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tp1-xW-guq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzV-C4-s3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2803" y="99"/>
+            <point key="canvasLocation" x="2802.898550724638" y="98.4375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vfs-Ge-9Qz">
